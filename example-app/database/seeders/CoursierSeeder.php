@@ -1,0 +1,130 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+
+class CoursierSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        DB::table('coursier')->insert([
+            [
+                'Zone' => 'Zone A',
+                'Code' => 'C001',
+                'Nom et prenoms' => 'John Doe',
+                'Contact' => '0123456789',
+                'Date de naissance' => '1990-01-01',
+                'Date de debut' => '2023-01-01',
+                'Date de fin' => '2024-01-01',
+                'Numero de CNI' => 'CNI001',
+                'Date de peremption CNI' => '2025-01-01',
+                'Numero permis' => 'PERMIS001',
+                'Date de peremption CMU' => '2025-01-01',
+                'Categorie' => 'A',
+                'Numero CMU' => 'CMU001',
+                'Date de peremption' => '2025-01-01',
+                'Groupe sanguin' => 'O+',
+                'Habitat' => 'Abidjan',
+                'Nom cas urgence' => 'Jane Doe',
+                'Contact Urgence' => '0987654321',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'Zone' => 'Zone B',
+                'Code' => 'C002',
+                'Nom et prenoms' => 'Alice Smith',
+                'Contact' => '0123456790',
+                'Date de naissance' => '1985-05-10',
+                'Date de debut' => '2023-01-01',
+                'Date de fin' => '2024-01-01',
+                'Numero de CNI' => 'CNI002',
+                'Date de peremption CNI' => '2026-01-01',
+                'Numero permis' => 'PERMIS002',
+                'Date de peremption CMU' => '2025-06-01',
+                'Categorie' => 'B',
+                'Numero CMU' => 'CMU002',
+                'Date de peremption' => '2026-01-01',
+                'Groupe sanguin' => 'A+',
+                'Habitat' => 'Cocody',
+                'Nom cas urgence' => 'Bob Smith',
+                'Contact Urgence' => '0978654321',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'Zone' => 'Zone C',
+                'Code' => 'C003',
+                'Nom et prenoms' => 'Marc Zongo',
+                'Contact' => '0123456791',
+                'Date de naissance' => '1992-11-15',
+                'Date de debut' => '2023-02-01',
+                'Date de fin' => '2024-02-01',
+                'Numero de CNI' => 'CNI003',
+                'Date de peremption CNI' => '2025-12-01',
+                'Numero permis' => 'PERMIS003',
+                'Date de peremption CMU' => '2025-07-01',
+                'Categorie' => 'C',
+                'Numero CMU' => 'CMU003',
+                'Date de peremption' => '2025-11-01',
+                'Groupe sanguin' => 'B+',
+                'Habitat' => 'Treichville',
+                'Nom cas urgence' => 'Marie Zongo',
+                'Contact Urgence' => '0954321768',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'Zone' => 'Zone D',
+                'Code' => 'C004',
+                'Nom et prenoms' => 'Nina Diop',
+                'Contact' => '0123456792',
+                'Date de naissance' => '1995-02-20',
+                'Date de debut' => '2023-03-01',
+                'Date de fin' => '2024-03-01',
+                'Numero de CNI' => 'CNI004',
+                'Date de peremption CNI' => '2026-05-01',
+                'Numero permis' => 'PERMIS004',
+                'Date de peremption CMU' => '2026-04-01',
+                'Categorie' => 'A',
+                'Numero CMU' => 'CMU004',
+                'Date de peremption' => '2026-03-01',
+                'Groupe sanguin' => 'AB+',
+                'Habitat' => 'Yopougon',
+                'Nom cas urgence' => 'Awa Diop',
+                'Contact Urgence' => '0943215768',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'Zone' => 'Zone E',
+                'Code' => 'C005',
+                'Nom et prenoms' => 'Oumar Ba',
+                'Contact' => '0123456793',
+                'Date de naissance' => '1998-07-25',
+                'Date de debut' => '2023-04-01',
+                'Date de fin' => '2024-04-01',
+                'Numero de CNI' => 'CNI005',
+                'Date de peremption CNI' => '2027-01-01',
+                'Numero permis' => 'PERMIS005',
+                'Date de peremption CMU' => '2027-01-01',
+                'Categorie' => 'B',
+                'Numero CMU' => 'CMU005',
+                'Date de peremption' => '2026-06-01',
+                'Groupe sanguin' => 'O-',
+                'Habitat' => 'Plateau',
+                'Nom cas urgence' => 'Fatou Ba',
+                'Contact Urgence' => '0934561789',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ]);
+    }
+}
