@@ -15,6 +15,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    <link rel="stylesheet" href="asset('assets/css/register.css')">
     <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" />
 
     <!-- Scripts -->

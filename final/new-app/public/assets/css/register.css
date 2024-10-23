@@ -1,0 +1,10 @@
+/* Style personnalisé pour les champs de saisie */
+input[type="text"], input[type="email"], input[type="file"], input[type="number"], input[type="date"], textarea {
+    background-color: #ADD8E6; /* Bleu clair */
+    color: #0B0B0B; /* Noir foncé */
+}
+
+/* Changement de couleur du texte lors de la saisie */
+input::placeholder, textarea::placeholder {
+    color: #0B0B0B; /* Noir foncé pour le placeholder aussi */
+}

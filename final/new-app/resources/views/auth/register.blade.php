@@ -1,18 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<style>
-    /* Style personnalisé pour les champs de saisie */
-    input[type="text"], input[type="email"], input[type="file"], input[type="number"], input[type="date"], textarea {
-        background-color: #ADD8E6; /* Bleu clair */
-        color: #0B0B0B; /* Noir foncé */
-    }
-
-    /* Changement de couleur du texte lors de la saisie */
-    input::placeholder, textarea::placeholder {
-        color: #0B0B0B; /* Noir foncé pour le placeholder aussi */
-    }
-</style>
 
 
 @if($message = Session::get('success'))
@@ -212,26 +200,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuhM6Y7dAo0yS1uY1rU6HTU5odkwm2REY1uM3Z8KyJvF0E4" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-DH7Vcl7B4RRAAaLoGhDHKJ6tCt+4x/gTpP3Nd91c16tGbBMeEKU33F5CH5e71T4Y" crossorigin="anonymous"></script>
-  <script>
-      // Validation du formulaire
-      (function () {
-          'use strict'
-          // Sélectionner tous les formulaires avec la classe "needs-validation"
-          var forms = document.querySelectorAll('.needs-validation')
-
-          // Boucle sur chaque formulaire
-          Array.prototype.slice.call(forms)
-              .forEach(function (form) {
-                  form.addEventListener('submit', function (event) {
-                      if (!form.checkValidity()) {
-                          event.preventDefault() // Empêche l'envoi du formulaire
-                          event.stopPropagation() // Arrête la propagation de l'événement
-                      }
-                      form.classList.add('was-validated') // Ajoute la classe de validation
-                  }, false)
-              })
-      })()
-  </script>
 @endsection
 
 
