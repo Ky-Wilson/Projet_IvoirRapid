@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -10,63 +9,56 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
     use RegistersUsers;
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
     protected $redirectTo = '/home';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('guest');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
     protected function validator(array $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'abreviation' => ['required', 'string', 'max:255'],
+            'Telephone' => ['required', 'string', 'unique:users', 'size:10'],
+            'Cellulaire' => ['required', 'string', 'unique:users', 'size:10'],
+            'Compte_contribuable' => ['required', 'string', 'unique:users', 'size:9'],
+            'RCCM' => ['nullable', 'string'],
+            'Direction_1_Nom_et_Prenoms' => ['required', 'string', 'unique:users'],
+            'Direction_1_Contact' => ['required', 'string', 'unique:users'],
+            'Adresse' => ['nullable', 'string'],
+            'Commune' => ['required', 'string'],
+            'Quartier' => ['required', 'string'],
+            'Rue' => ['required', 'string'],
+            'Zone' => ['nullable', 'string'],
+            'Autre' => ['nullable', 'string'],
         ]);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
-     */
     protected function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'abreviation' => $data['abreviation'],
+            'Telephone' => $data['Telephone'],
+            'Cellulaire' => $data['Cellulaire'],
+            'Compte_contribuable' => $data['Compte_contribuable'],
+            'RCCM' => $data['RCCM'],
+            'Direction_1_Nom_et_Prenoms' => $data['Direction_1_Nom_et_Prenoms'],
+            'Direction_1_Contact' => $data['Direction_1_Contact'],
+            'Adresse' => $data['Adresse'],
+            'Commune' => $data['Commune'],
+            'Quartier' => $data['Quartier'],
+            'Rue' => $data['Rue'],
+            'Zone' => $data['Zone'],
+            'Autre' => $data['Autre'],
         ]);
     }
 }
