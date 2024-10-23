@@ -2,12 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Events\ClientCreated;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Client extends Model
 {
+
     use HasFactory;
+    
+    protected static function booted()
+{
+    static::created(function ($client) {
+        event(new ClientCreated($client));
+    });
+}
+
 
     protected $table = 'clients';
     

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ClientFormRequest;
+use App\Events\ClientCreated;
 use App\Models\Admin;
 use App\Models\Client;
 use Illuminate\Http\Request;
@@ -11,6 +12,7 @@ use Illuminate\Http\Request;
 class ClientController extends Controller
 {
     //
+    
     public function index(){
         $clients = Client::all();
         return view('admin.client.index' , compact('clients'));
@@ -46,6 +48,10 @@ class ClientController extends Controller
             $client->Autre = $data['Autre'];
     
             $client->save();
+            // Lancer l'événement pour générer le code unique
+            event(new ClientCreated($client));
+    
+
     
             return redirect('admin/client')->with('message', 'Client enregistré avec succès');
         } catch (\Illuminate\Database\QueryException $e) {

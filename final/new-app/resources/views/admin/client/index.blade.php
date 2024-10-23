@@ -17,6 +17,7 @@
             <thead class="table-light">
                 <tr>
                     <th scope="col" class="text-nowrap">ID</th>
+                    <th scope="col" class="text-nowrap">Code Unique</th>
                     <th scope="col" class="text-nowrap">Nom Société</th>
                     <th scope="col" class="text-nowrap">Abreviation</th>
                     <th scope="col" class="text-nowrap">Téléphone</th>
@@ -43,6 +44,7 @@
                 @foreach ($clients as $client)
                 <tr>
                     <td>{{ $loop->index+1 }}</td>
+                    <td class="text-nowrap">{{ $client->code_unique }}</td>
                     <td>{{ $client->Nom_Société }}</td>
                     <td>{{ $client->abreviation }}</td> <!-- Abreviation -->
                     <td>{{ $client->Telephone }}</td> <!-- Téléphone -->
