@@ -17,6 +17,7 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{ url('admin/add-client') }}">Ajouter un client</a>
                         <a class="nav-link" href="{{ url('admin/client') }}">Toutes les informations des clients</a>
+                        <a class="nav-link" href="{{ route('clients.important') }}" >Informations importantes des clients</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

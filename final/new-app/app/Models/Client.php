@@ -2,25 +2,26 @@
 
 namespace App\Models;
 
+use App\Models\Client;
 use App\Events\ClientCreated;
+use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 
-class Client extends Model
+class Client extends Model implements AuthenticatableContract
 {
+    use HasFactory, Authenticatable;
 
-    use HasFactory;
-    
     protected static function booted()
-{
-    static::created(function ($client) {
-        event(new ClientCreated($client));
-    });
-}
-
+    {
+        static::created(function ($client) {
+            event(new ClientCreated($client));
+        });
+    }
 
     protected $table = 'clients';
-    
+
     protected $fillable = [
         'Nom_Société',
         'abreviation',
@@ -42,4 +43,24 @@ class Client extends Model
         'Zone',
         'Autre',
     ];
+
+    // Vous pouvez personnaliser les méthodes d'authentification ici
+    public function getAuthIdentifierName()
+    {
+        return 'Email'; // Champ utilisé pour l'authentification
+    }
+
+    public function getAuthPassword()
+    {
+        return $this->Cellulaire; // Champ utilisé comme mot de passe
+    }
+
+    use App\Models\Client;
+
+public function create()
+{
+    $clients = Client::all();
+    return view('admin.create-client', compact('clients'));
+}
+
 }
